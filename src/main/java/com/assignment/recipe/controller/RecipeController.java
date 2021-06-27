@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.assignment.recipe.model.Recipe;
 import com.assignment.recipe.service.IRecipeService;
 
-@RestController()
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class RecipeController {
 	@Autowired
     private IRecipeService recipeService;

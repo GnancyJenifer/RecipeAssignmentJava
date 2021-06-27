@@ -53,13 +53,12 @@ public class Recipe implements Serializable{
 
 	public Recipe() {
 		
-	}
-
+	}	
 	
-	public Recipe(Long recipeId, String recipeName, boolean isVegetarian, Set<Ingredients> ingredients, int serveCount,
+
+	public Recipe(String recipeName, boolean isVegetarian, Set<Ingredients> ingredients, int serveCount,
 			String cookingInstructions, Date createdDate) {
 		super();
-		this.recipeId = recipeId;
 		this.recipeName = recipeName;
 		this.isVegetarian = isVegetarian;
 		this.ingredients = ingredients;

@@ -43,6 +43,10 @@ public class RecipeControllerTest {
 	   private RecipeController recipeController;
 	   
 	   @Test
+		public void contextLoads() {
+		}
+	   
+	   @Test
 	   public void getAllRecipies() throws Exception {
 	       Recipe recipe = new Recipe();
 	       List<Recipe> allRecipes = singletonList(recipe);
@@ -73,8 +77,8 @@ public class RecipeControllerTest {
 	   @Test
 	   public void addRecipie() throws Exception 
 	   { 	Set<Ingredients> ingredients=new HashSet<Ingredients>();
-		   Recipe recipe=new Recipe(null, "Strawberry Milkshake", false, ingredients,2,"test",new Date());		   
-		   ingredients.add(new Ingredients(null, "Ingredient1", recipe));
+		   Recipe recipe=new Recipe( "Strawberry Milkshake", false, ingredients,2,"test",new Date());		   
+		   ingredients.add(new Ingredients( "Ingredient1", recipe));
 	     mvc.perform( post("/recipie/add")
 	         .content(asJsonString(recipe))
 	         .contentType(MediaType.APPLICATION_JSON)
@@ -86,8 +90,9 @@ public class RecipeControllerTest {
 	   @Test
 	   public void updateRecipie() throws Exception 
 	   { 	Set<Ingredients> ingredients=new HashSet<Ingredients>();
-		   Recipe recipe=new Recipe(3l, "Strawberry Milkshake", false, ingredients,2,"test",new Date());		   
-		   ingredients.add(new Ingredients(null, "Ingredient1", recipe));
+		   Recipe recipe=new Recipe("Strawberry Milkshake", false, ingredients,2,"test",new Date());
+		   recipe.setRecipeId(3l);
+		   ingredients.add(new Ingredients( "Ingredient1", recipe));
 	     mvc.perform( put("/recipie/update/{id}",3)
 	         .content(asJsonString(recipe))
 	         .contentType(MediaType.APPLICATION_JSON)

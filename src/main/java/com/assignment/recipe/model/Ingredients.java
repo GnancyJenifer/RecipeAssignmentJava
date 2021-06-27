@@ -33,12 +33,13 @@ public class Ingredients implements Serializable{
 	public Ingredients() {
     }
 
-	public Ingredients(Long id, String ingredientName, Recipe recipe) {
+	
+	public Ingredients(String ingredientName, Recipe recipe) {
 		super();
-		this.id = id;
 		this.ingredientName = ingredientName;
 		this.recipe = recipe;
 	}
+
 
 	public Long getId() {
 		return id;

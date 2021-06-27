@@ -10,6 +10,8 @@ public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
 	public Recipe findByRecipeId(Long id);
 
+	public Recipe findByRecipeName(String string);
+
 	
 
 }
